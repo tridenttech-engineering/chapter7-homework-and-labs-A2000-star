@@ -7,12 +7,6 @@ using namespace std;
 
 int main()
 {
-	int a = 3;
-	int b = 47;
-	while (a < b)
-		{
-			cout << "andre is awesome" << endl;
-			break;
-		}
+
 	return 0;
 }	//end of main function
