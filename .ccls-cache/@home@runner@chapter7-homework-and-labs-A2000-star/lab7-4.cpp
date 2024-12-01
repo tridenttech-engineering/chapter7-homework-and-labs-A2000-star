@@ -6,33 +6,36 @@
 using namespace std;
 
 int main()
-{ 
-	
-	int months = 1;
-	int totalBill = 0.0;
-	double averageBill = 0.0;
-	double bill = 0.0;
-	while  (months < 13)
 {
-	cout << "Enter the electric bill for month " << months << ": ";
-			cin >> bill;
-			totalBill += bill;
-			months += 1;
-		} //end while
-		averageBill = static_cast<double>(totalBill) / (months - 1);
-			
-		}
-	cout << "Average electric bill for" << months << "months " << endl;
-	cout << "Enter the number of months: ";
-	cin >> months;
-	cin >> bill; 
-	 (int month = 1; month <= months; month += 1)
-		
-	
-		
-		
-cout << fixed << setprecision(2);		
-cout << "Average electric bill for" << months << "months " << endl;
-cout << "No bill amount entered. " << endl;
-		
+	double bill = 0.0;
+	double totalBills = 0.0;
+	double avgBill = 0.0;
+	int months = 0;
+
+	cout << "Bill for month 1: ";
+	cin >> bill;
+	while (bill >= 0.0)
+	{
+		totalBills += bill;
+		months += 1;
+		cout << "Bill for month " << months + 1 << ": ";
+		cin >> bill;
+	}  //end while
+
+	if (months > 0)
+	{
+		avgBill = totalBills / months;
+		cout << fixed << setprecision(2);
+		cout << "Average electric bill for " << months 
+			<< " months: $" << avgBill << endl;
+	}
+	else
+		cout << "No bill amount entered." << endl;
+	//end if
+	return 0;
 }	//end of main function
+
+
+
+
+

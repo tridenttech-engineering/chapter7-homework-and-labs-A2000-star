@@ -1,4 +1,4 @@
-//Lab7-4.cpp - displays the average electric bill
+//Lab7-6.cpp - calculates and displays the average price
 //Created/revised by <your name> on <current date>
 
 #include <iostream>
@@ -7,35 +7,32 @@ using namespace std;
 
 int main()
 {
-	double bill = 0.0;
-	double totalBills = 0.0;
-	double avgBill = 0.0;
-	int months = 0;
+	double price      = 0.0;
+	double totalPrice = 0.0;  //accumulator
+	double avgPrice   = 0.0;
+	int numPrices    = 0;    //counter
 
-	cout << "Bill for month 1: ";
-	cin >> bill;
-	while (bill >= 0.0)
-	{
-		totalBills += bill;
-		months += 1;
-		cout << "Bill for month " << months + 1 << ": ";
-		cin >> bill;
-	}  //end while
+	cout << "Price: (negative number to end) ";
+	cin >> price;
+	while (price >= 0.00)
+	{    
+		numPrices += 1;    
+		totalPrice += price;    
+		cout << "Next price: ";    
+		cin >> price;
+	} //end while
 
-	if (months > 0)
-	{
-		avgBill = totalBills / months;
-		cout << fixed << setprecision(2);
-		cout << "Average electric bill for " << months 
-			<< " months: $" << avgBill << endl;
-	}
-	else
-		cout << "No bill amount entered." << endl;
-	//end if
+	if (numPrices > 0) 
+		avgPrice = totalPrice / numPrices;    
+	else    
+		avgPrice = 0.0;
+	// end if
+	cout << fixed << setprecision(2) << endl;
+	cout << "Average price: " << avgPrice << endl;
 	return 0;
 }	//end of main function
 
 
 
 
-0
+
